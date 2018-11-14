@@ -5,7 +5,7 @@ subtitle: Project for GEO 503
 ---
 
 # Introduction
-In order to trace the change and improve a city development, it is important for us to map the land use for cities. However, the update of land use images published by government is relatively slow for monitoring some small changes. The public of Landsat imagery offers us an opportunity to map land cover of cities using remote sensing methods. Nevertheless, the spatial characteristic for each city is not the same, the methods suitable for every city should not be the same. In order to get the most applicable classification method for Buffalo with Landsat imagery, three commonly used classification methods -Random Forest, Support Vector Machine and Maximum likelihood- were trained and tested in Buffalo with Landsat 8 images. Random Forest performed relatively better than other two. Therefore, the land use images in 2013, 2015, 2017 were also created with the trained Random Forest model. According to the result, impervious surface covers a great part of Buffalo, which is 59.34% in 2018. The temporal land cover maps of Buffalo show that Buffalo does not change a lot in the past 5 years. This study offers a good reference for land cover map for Buffalo city and give a general information of the change of the city. 
+In order to trace the change and improve a city development, it is important for us to map the land use for cities. However, the update of land use images published by government is relatively slow for monitoring some small changes. The public of Landsat imagery offers us an opportunity to map land cover of cities using remote sensing methods. Nevertheless, the spatial characteristic for each city is not the same, the methods suitable for every city should not be the same. In order to get the most applicable classification method for Buffalo with Landsat imagery, three commonly used classification methods -Random Forest, Support Vector Machine and Maximum likelihood- were trained and tested in Buffalo with Landsat 8 images. Random Forest performed relatively better than other two. Therefore, the land use images in 2013, 2015, 2017 were also created with the trained Random Forest model. According to the result, impervious surface covers a great part of Buffalo, which is 59.34% in 2018. The temporal land cover maps of Buffalo show that Buffalo does not change a lot in the past 5 years. This study offers a good reference for land cover map for Buffalo city and give a general information of the change of the city.  
 
 
 # Materials and methods
@@ -57,7 +57,7 @@ files <- getLandsat_data(records = query[1,], level = "l1", source = "auto")
 tilPath = files[[1]][grepl(".TIF$",files[[1]])]
 ```
 
-The Landsat 8 imagery in Augest 23, 2018 was used in this study. A fake color image of this image is posted below.
+The Landsat 8 imagery in Augest 23, 2018 was used in this study. A fake color image of this image is posted below. 
 
 ```{r, echo = FALSE, fig.width=5, fig.height=5, fig.cap="Fig1.Landsat 8 image in Augest 23, 2018"}
 dataDirectory <- 'LandsatImage'
@@ -101,7 +101,7 @@ rm(buffaloBoundary_transe)
 gc()
 ```
 
-In order to train the three methods in this study, labeled sample data are required. They were collected in ENVI use visual interpretation. The class of each region was labeled. Then, use the code below to get the spectral information in the Landsat image for each labeled point.
+In order to train the three methods in this study, labeled sample data are required. They were collected in ENVI use visual interpretation. The class of each region was labeled. Then, use the code below to get the spectral information in the Landsat image for each labeled point. 
 
 ```{r, results = 'hide', message=F, warning=F}
 responseCol <- "CLASS_ID"
@@ -232,7 +232,7 @@ gc()
 
 # Results
 
-Random Forest, Support Vector Machine and Maximum Likelihood methods were trained and tested in this study. The confusion matrix of those methods were listed below.
+Random Forest, Support Vector Machine and Maximum Likelihood methods were trained and tested in this study. The confusion matrix of those methods were listed below. 
 
 
 ```{r,echo = FALSE,  message=F, warning=F}
